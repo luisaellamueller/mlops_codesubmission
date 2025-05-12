@@ -1,0 +1,20 @@
+project: CIFAR10-Experiment-WB
+program: train_sweep.py
+method: grid 
+
+metric:
+  name: val_loss
+  goal: minimize
+  
+parameters:
+  learning_rate:
+    values: [0.0001, 0.001, 0.005, 0.01]
+  batch_size:
+    values: [32, 64, 128]
+  optimizer:
+    values: ["SGD", "Adam"]
+  num_epochs:
+    value: 20
+  seed:
+    value: 1234 
+
